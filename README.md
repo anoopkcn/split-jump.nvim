@@ -91,6 +91,9 @@ The plugin provides the following commands:
 - `:SplitJumpRight` - Navigate right
 - `:SplitJumpPrevious` - Navigate to previous split/pane
 
+## Note
+`<C-l>` is a default netrw mapping. `split-jump` will override this mapping. set custom mappings to avoid this remap if you wish.
+
 ## Requirements
 
 - Neovim >= 0.5.0
