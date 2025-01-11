@@ -27,7 +27,7 @@ bind-key -n 'C-k' if-shell "$is_vim" 'send-keys C-k' 'select-pane -U'
 bind-key -n 'C-l' if-shell "$is_vim" 'send-keys C-l' 'select-pane -R'
 bind-key -n 'C-\' if-shell "$is_vim" 'send-keys C-\\' 'select-pane -l'
 ```
-credits to tmux keybinding: [christoomey](https://github.com/christoomey/vim-tmux-navigator)
+credits for tmux keybinding: [christoomey](https://github.com/christoomey/vim-tmux-navigator)
 
 ## Configuration
 
