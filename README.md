@@ -5,10 +5,8 @@ A Neovim plugin that provides seamless navigation between Neovim splits and tmux
 ## Features
 
 - Seamless navigation between Neovim splits and tmux panes
-- Configurable save behavior when switching between panes
 - Optional preservation of tmux zoom state
 - Optional wrapping prevention when navigating
-- Default keymaps that can be enabled/disabled
 
 ## Installation
 
