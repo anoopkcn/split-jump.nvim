@@ -1,15 +1,24 @@
+---@class SplitJumpConfig
+---@field mappings boolean
+---@field disable_when_zoomed boolean
+---@field save_on_switch integer
+---@field preserve_zoom boolean
+---@field no_wrap boolean
+---@field disable_netrw_workaround boolean
+
+---@class split_jump
 local M = {}
 
 local tmux_is_last_pane = false
 
 -- Configuration defaults
-M.config = {
+local default_config = {
   mappings = true,
   disable_when_zoomed = false,
   save_on_switch = 0, -- 0: no save, 1: save current buffer, 2: save all buffers
   preserve_zoom = false,
   no_wrap = false,
-  disable_netrw_workaround = false
+  disable_netrw_workaround = true
 }
 
 local function vim_navigate(direction)
@@ -84,9 +93,10 @@ local function tmux_aware_navigate(direction)
   end
 end
 
+---@param user_config? SplitJumpConfig
 function M.setup(user_config)
   -- Merge user config with defaults
-  M.config = vim.tbl_extend('force', M.config, user_config or {})
+  M.config = vim.tbl_deep_extend('force', default_config, user_config or {})
 
   -- Only set up if not in tmux
   if not vim.env.TMUX then
@@ -134,4 +144,10 @@ function M.setup(user_config)
   end
 end
 
-return M
+M.setup()
+
+return setmetatable(M, {
+  __index = function(_, k)
+    return M[k]
+  end,
+})
