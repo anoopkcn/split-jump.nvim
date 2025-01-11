@@ -94,7 +94,7 @@ The plugin provides the following commands:
 ## Requirements
 
 - Neovim >= 0.5.0
-- tmux (optional - for tmux integration)
+- tmux >= 3.0 (optional - for tmux integration)
 
 
 ## Inspiration
