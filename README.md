@@ -56,35 +56,32 @@ The plugin provides the following commands:
     "anoopkcn/split-jump.nvim",
     config = function()
         require("split-jump").setup({
-            -- your configuration comes here
+            -- your configuration goes here
+            -- The following are the default configurations ...
+            -- ... change them to your liking
+
+            -- Enable/disable default mappings
+            mappings = true,
+
+            -- Disable navigation when tmux pane is zoomed
+            disable_when_zoomed = false,
+
+            -- Save behavior when switching panes:
+            -- 0: no save
+            -- 1: save current buffer
+            -- 2: save all buffers
+            save_on_switch = 0,
+
+            -- Preserve tmux zoom state when navigating
+            preserve_zoom = false,
+
+            -- Prevent wrapping when navigating
+            no_wrap = false,
+
+            -- Disable the netrw <C-l> mapping workaround
+            disable_netrw_workaround = true
         })
     end,
-}
-```
-The following are the default configurations:
-
-```lua
-{
-    -- Enable/disable default mappings
-    mappings = true,
-
-    -- Disable navigation when tmux pane is zoomed
-    disable_when_zoomed = false,
-
-    -- Save behavior when switching panes:
-    -- 0: no save
-    -- 1: save current buffer
-    -- 2: save all buffers
-    save_on_switch = 0,
-
-    -- Preserve tmux zoom state when navigating
-    preserve_zoom = false,
-
-    -- Prevent wrapping when navigating
-    no_wrap = false,
-
-    -- Disable the netrw <C-l> mapping workaround
-    disable_netrw_workaround = true
 }
 ```
 
