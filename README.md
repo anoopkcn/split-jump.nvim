@@ -16,7 +16,7 @@ A Neovim plugin that provides seamless navigation between Neovim splits and tmux
 { "anoopkcn/split-jump.nvim" }
 ```
 
-Add the following lines to tmux configuration for split navigation:
+If you have TMUX, Add the following lines to tmux configuration for split navigation:
 
 ```bash
 is_vim="ps -o state= -o comm= -t '#{pane_tty}' \
@@ -28,6 +28,26 @@ bind-key -n 'C-l' if-shell "$is_vim" 'send-keys C-l' 'select-pane -R'
 bind-key -n 'C-\' if-shell "$is_vim" 'send-keys C-\\' 'select-pane -l'
 ```
 credits for tmux keybinding: [christoomey](https://github.com/christoomey/vim-tmux-navigator)
+
+## Default Keymaps
+
+When `mappings = true`, the following keymaps are set:
+
+- `<C-h>` - Navigate left
+- `<C-j>` - Navigate down
+- `<C-k>` - Navigate up
+- `<C-l>` - Navigate right
+- `<C-\>` - Navigate to previous split/pane
+
+## Commands
+
+The plugin provides the following commands:
+
+- `:SplitJumpLeft` - Navigate left
+- `:SplitJumpDown` - Navigate down
+- `:SplitJumpUp` - Navigate up
+- `:SplitJumpRight` - Navigate right
+- `:SplitJumpPrevious` - Navigate to previous split/pane
 
 ## Configuration
 
@@ -67,26 +87,6 @@ The following are the default configurations:
     disable_netrw_workaround = true
 }
 ```
-
-## Default Keymaps
-
-When `mappings = true`, the following keymaps are set:
-
-- `<C-h>` - Navigate left
-- `<C-j>` - Navigate down
-- `<C-k>` - Navigate up
-- `<C-l>` - Navigate right
-- `<C-\>` - Navigate to previous split/pane
-
-## Commands
-
-The plugin provides the following commands:
-
-- `:SplitJumpLeft` - Navigate left
-- `:SplitJumpDown` - Navigate down
-- `:SplitJumpUp` - Navigate up
-- `:SplitJumpRight` - Navigate right
-- `:SplitJumpPrevious` - Navigate to previous split/pane
 
 ## Note
 `<C-l>` is a default netrw mapping. `split-jump` will override this mapping. set custom mappings to avoid this remap if you wish.
