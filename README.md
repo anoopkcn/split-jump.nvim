@@ -31,13 +31,13 @@ credits for tmux keybinding: [christoomey](https://github.com/christoomey/vim-tm
 
 ## Default Keymaps
 
-When `mappings = true`, the following keymaps are set:
-
 - `<C-h>` - Navigate left
 - `<C-j>` - Navigate down
 - `<C-k>` - Navigate up
 - `<C-l>` - Navigate right
 - `<C-\>` - Navigate to previous split/pane
+
+You can set your own keybinding after setting the option `mappings = false`
 
 ## Commands
 
